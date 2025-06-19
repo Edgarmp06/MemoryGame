@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game - Juego de Memoria</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <h1>🧠 Memory Game</h1>
+            <p>Encuentra todas las parejas de cartas</p>
+        </header>
+
+        <div class="game-stats">
+            <div class="stat-item">
+                <span class="stat-label">Tiempo</span>
+                <span class="stat-value" id="timer">00:00</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Movimientos</span>
+                <span class="stat-value" id="moves">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Parejas</span>
+                <span class="stat-value" id="pairs">0/8</span>
+            </div>
+        </div>
+
+        <div class="difficulty-selector">
+            <button class="difficulty-btn active" data-level="easy">
+                Fácil (4x4)
+            </button>
+            <button class="difficulty-btn" data-level="medium">
+                Medio (4x5)
+            </button>
+            <button class="difficulty-btn" data-level="hard">
+                Difícil (6x6)
+            </button>
+        </div>
+
+        <div class="game-board" id="game-board">
+            <!-- Las cartas se generan dinámicamente -->
+        </div>
+
+        <div class="game-controls">
+            <button class="control-btn primary" id="start-btn">
+                🎮 Comenzar Juego
+            </button>
+            <button class="control-btn secondary" id="reset-btn">
+                🔄 Reiniciar
+            </button>
+        </div>
+
+        <div class="best-scores">
+            <h3>🏆 Mejores Puntuaciones</h3>
+            <div id="scores-list">
+                <div class="score-item">
+                    <span>Fácil:</span>
+                    <span id="best-easy">--:--</span>
+                </div>
+                <div class="score-item">
+                    <span>Medio:</span>
+                    <span id="best-medium">--:--</span>
+                </div>
+                <div class="score-item">
+                    <span>Difícil:</span>
+                    <span id="best-hard">--:--</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de victoria -->
+        <div class="modal" id="victory-modal">
+            <div class="modal-content">
+                <h2>🎉 ¡Felicitaciones!</h2>
+                <p>Has completado el juego</p>
+                <div class="victory-stats">
+                    <div>⏱️ Tiempo: <span id="final-time"></span></div>
+                    <div>🎯 Movimientos: <span id="final-moves"></span></div>
+                    <div id="new-record" class="new-record hidden">
+                        🏆 ¡Nuevo récord!
+                    </div>
+                </div>
+                <div class="modal-buttons">
+                    <button class="control-btn primary" id="play-again">
+                        🎮 Jugar de nuevo
+                    </button>
+                    <button class="control-btn secondary" id="close-modal">
+                        ✖️ Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            Hecho por <a href="https://mi-portfolio-omega-cyan.vercel.app/" target="_blank">Edgar Meroño</a> © 2025
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
